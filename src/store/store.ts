@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import createSagaMiddleware from 'redux-saga';
+import { HmrAcceptor } from '../shared/utils/hmr';
 
 import rootReducer from './root.reducer';
 import { rootSaga } from './root.saga';
@@ -15,11 +16,11 @@ const store = configureStore({
 
 sagaMiddleware.run(rootSaga);
 
-if (module && process?.env?.NODE_ENV === 'development' && (module as any).hot) {
-  (module as any).hot.accept('./root.reducer', (): void => {
+export const acceptHotStore = (accept: HmrAcceptor): void => {
+  accept('./root.reducer', (): void => {
     const newRootReducer = require('./root.reducer').default;
     store.replaceReducer(newRootReducer);
   });
-}
+};
 
 export default store;

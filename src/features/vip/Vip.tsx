@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import React, {
   FunctionComponent,
   PropsWithChildren,
@@ -13,6 +13,7 @@ const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
       justify={'center'}
       alignItems={'center'}
     >
+      <Typography variant={'h6'}> H6 Test </Typography>
       <ImageSlider>
         <img
           alt="test"
