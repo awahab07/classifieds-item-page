@@ -2,7 +2,7 @@ import { CurrencyCode } from './CurrencyCode';
 
 export type PriceType = 'FIXED';
 
-export interface ArticlePrice {
+export interface IArticlePrice {
   large: string;
   grs: {
     amount: number;

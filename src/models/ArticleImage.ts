@@ -1,4 +1,4 @@
-export interface ArticleImage {
+export interface IArticleImage {
   uri: string;
   set: string;
 }

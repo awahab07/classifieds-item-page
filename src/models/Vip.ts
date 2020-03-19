@@ -1,11 +1,11 @@
-import { ArticleAttribute } from './ArticleAttribute';
-import { ArticleImage } from './ArticleImage';
-import { ArticlePrice } from './ArticlePrice';
-import { Seller } from './Seller';
+import { IArticleAttribute } from './ArticleAttribute';
+import { IArticleImage } from './ArticleImage';
+import { IArticlePrice } from './ArticlePrice';
+import { ISeller } from './Seller';
 
 export type Segment = 'Car';
 
-interface AdmobTargeting {
+interface IAdmobTargeting {
   make: string;
   model: string;
   dealer: string;
@@ -18,22 +18,22 @@ interface AdmobTargeting {
   advid: string;
 }
 
-export interface VIP {
+export interface IVip {
   id: number;
   sellerId: number;
   title: string;
   makeId: number;
   makeKey: string;
   modelKey: string;
-  images: ArticleImage[];
-  price: ArticlePrice;
+  images: IArticleImage[];
+  price: IArticlePrice;
   vat: string;
-  contact: Seller;
+  contact: ISeller;
   isNew: boolean;
   isConditionNew: boolean;
   isPreRegistration: boolean;
   category: string;
-  attributes: ArticleAttribute[];
+  attributes: IArticleAttribute[];
   features: string[];
   hasDamage: boolean;
   isDamageCase: boolean;
@@ -41,5 +41,5 @@ export interface VIP {
   segment: Segment;
   vc: string;
   created: number;
-  adMobTargeting: AdmobTargeting;
+  adMobTargeting: IAdmobTargeting;
 }

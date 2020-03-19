@@ -1,5 +1,5 @@
 import { CountryCode } from './CountryCode';
-import { LonLat } from './LonLat';
+import { ILonLat } from './LonLat';
 
 export type DealerTypeEnumKeys = 'DEALER';
 
@@ -15,21 +15,21 @@ export enum SellePhoneType {
   PHONE1 = 'PHONE1'
 }
 
-export interface SellerPhone {
+export interface ISellerPhone {
   type: SellePhoneType;
   number: string;
   uri: string;
 }
 
-export interface Seller {
+export interface ISeller {
   type: SellerType;
   country: CountryCode;
   enumType: SellerTypeEnumType;
   name: string;
   address1: string;
   address2: string;
-  phones: SellerPhone[];
-  latLong: LonLat;
+  phones: ISellerPhone[];
+  latLong: ILonLat;
   withMobileSince: string;
   imprint: string;
   canSendCcMail: boolean;

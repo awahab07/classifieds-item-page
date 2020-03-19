@@ -1,4 +1,4 @@
-export type ArticleTag =
+export type IArticleTag =
   | 'cubicCapacity'
   | 'power'
   | 'fuel'
@@ -12,8 +12,8 @@ export type ArticleTag =
   | 'airbag'
   | 'color';
 
-export interface ArticleAttribute {
+export interface IArticleAttribute {
   label: string;
-  tag?: ArticleTag;
+  tag?: IArticleTag;
   value: string;
 }
