@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import App from './app/App';
 import * as serviceWorker from './app/serviceWorker';
 import { HmrAcceptor, runForHmr } from './shared/utils/hmr';
-import store, { acceptHotStore } from './store/store';
+import store, { acceptHotStore } from './store';
 
 const render = (): void => {
   ReactDOM.render(

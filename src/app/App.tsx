@@ -1,15 +1,19 @@
-import { CssBaseline } from '@material-ui/core';
+import { Box, CssBaseline, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import 'typeface-roboto';
 import Vip from '../features/vip/Vip';
+import { appTheme, useAppStyles } from './theme';
 
 const App: React.FC = (): React.ReactElement => {
+  const classes = useAppStyles();
 
   return (
     <CssBaseline>
-      <div>
-        <Vip/>
-      </div>
+      <ThemeProvider theme={appTheme}>
+        <Box className={classes.main}>
+          <Vip />
+        </Box>
+      </ThemeProvider>
     </CssBaseline>
   );
 };
