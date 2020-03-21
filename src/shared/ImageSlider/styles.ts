@@ -2,7 +2,8 @@ import { Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { IImageSliderProps } from './interfaces';
 
-const gutter = (theme: Theme) => (props: IImageSliderProps) => props.isMobile ? 0 : theme.spacing(1);
+const gutter = (theme: Theme) => (props: IImageSliderProps) =>
+  props.isMobile ? 0 : theme.spacing(1);
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => {
       position: 'absolute',
       color: theme.palette.grey[800],
       zIndex: 100,
-      backgroundOpacity: 0.4
+      backgroundOpacity: 0.4,
     },
     fsToggleButton: {
       right: gutter(theme),
@@ -37,6 +38,9 @@ const useStyles = makeStyles((theme: Theme) => {
     navForward: {
       right: gutter(theme),
       top: '50%',
+    },
+    noBackground: {
+      background: 'none',
     },
   };
 });

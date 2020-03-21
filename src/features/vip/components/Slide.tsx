@@ -1,5 +1,5 @@
 import React, { FunctionComponent, ReactElement } from 'react';
-import { ISlideProps } from '../../shared/ImageSlider';
+import { ISlideProps } from '../../../shared/ImageSlider';
 
 const Slide: FunctionComponent<ISlideProps> = (props: ISlideProps): ReactElement => {
   return (

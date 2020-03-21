@@ -1,13 +1,15 @@
 import { createMuiTheme, Theme } from '@material-ui/core';
 import { deepPurple, grey } from '@material-ui/core/colors';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, responsiveFontSizes } from '@material-ui/core/styles';
 
-export const appTheme = createMuiTheme({
-  palette: {
-    primary: grey,
-    secondary: deepPurple,
-  },
-});
+export const appTheme = responsiveFontSizes(
+  createMuiTheme({
+    palette: {
+      primary: grey,
+      secondary: deepPurple,
+    },
+  })
+);
 
 export const useAppStyles = makeStyles((theme: Theme) => ({
   main: {

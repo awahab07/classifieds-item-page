@@ -1,6 +1,6 @@
 import React, { FunctionComponent, ReactElement } from 'react';
-import { IThumbnailProps } from '../../shared/ImageSlider';
-import { useStyles } from './styles';
+import { IThumbnailProps } from '../../../shared/ImageSlider';
+import { useStyles } from '../styles';
 
 const Thumbnail: FunctionComponent<IThumbnailProps> = (props: IThumbnailProps): ReactElement => {
   const classes = useStyles();
