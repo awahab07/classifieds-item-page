@@ -9,8 +9,9 @@ import { useIsMobile } from '../../../shared/utils/screen';
 import { RootState } from '../../../store';
 import { vipActions } from '../index';
 import { useStyles } from '../styles';
-import MobileContact from './MobilContact';
+import ArticleCta from './ArticleCta';
 import MobileNavBar from './MobileNavBar';
+import SellerInfo from './SellerInfo';
 import Slide from './Slide';
 import Thumbnail from './Thumbnail';
 import VipHeader from './VipHeader';
@@ -52,7 +53,8 @@ const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
             thumbnailRenderer={Thumbnail}
             isMobile={isMobile}
           />
-          {isMobile && vip !== null ? <MobileContact {...vip} /> : null}
+          {isMobile && vip !== null ? <ArticleCta {...vip} /> : null}
+          {vip !== null ? <SellerInfo contact={vip.contact}/> : null}
         </Grid>
       </Paper>
     </>
