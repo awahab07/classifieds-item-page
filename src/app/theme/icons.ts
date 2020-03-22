@@ -1,4 +1,5 @@
 import {
+  CheckOutlined,
   LocalGasStationOutlined,
   Room,
   SettingsInputComponentOutlined,
@@ -39,3 +40,5 @@ export const techAttributeIcons: { [key: string]: ILabelIcon } = {
   airbag: { tag: 'Air Bags', icon: Airbag },
   color: { tag: 'color', icon: Spray },
 };
+
+export const ArticleGenericFeatureIcon = CheckOutlined;

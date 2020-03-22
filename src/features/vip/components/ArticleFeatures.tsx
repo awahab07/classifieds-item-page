@@ -1,8 +1,6 @@
-import { Box } from '@material-ui/core';
-import { Assignment } from '@material-ui/icons';
 import React, { FunctionComponent } from 'react';
 import { useAppStyles } from '../../../app/theme';
-import { techAttributeIcons } from '../../../app/theme/icons';
+import { ArticleGenericFeatureIcon } from '../../../app/theme/icons';
 import { BoxGrid } from '../../../shared/BoxComponents';
 import BoxTypography from '../../../shared/BoxComponents/BoxTypography';
 import { useIsMobile } from '../../../shared/utils/screen';
@@ -13,15 +11,6 @@ const ArticleFeatures: FunctionComponent<{ features: string[] }> = (props: {
   const appClasses = useAppStyles();
   const isMobile = useIsMobile();
   const features = props.features ?? [];
-
-  const getIcon = (feature: string): React.ReactElement => {
-    let Icon = Assignment;
-    if (feature !== undefined && techAttributeIcons[feature] !== undefined) {
-      Icon = techAttributeIcons[feature].icon;
-    }
-
-    return <Icon color={'inherit'} />;
-  };
 
   return (
     <BoxGrid
@@ -58,12 +47,10 @@ const ArticleFeatures: FunctionComponent<{ features: string[] }> = (props: {
           classes={{ root: appClasses.fadeBorder }}
           wrap={'nowrap'}
         >
-          <BoxGrid item color={'secondary.dark'}>
-            <Box mt={1} clone>{getIcon(feature)}</Box>
+          <BoxGrid alignItems={'flex-start'} color={'secondary.dark'} pr={1} py={1} mt={1}>
+            <ArticleGenericFeatureIcon />
           </BoxGrid>
-          <BoxTypography variant={'caption'}>
-            {feature}
-          </BoxTypography>
+          <BoxTypography variant={'caption'}>{feature}</BoxTypography>
         </BoxGrid>
       ))}
     </BoxGrid>
