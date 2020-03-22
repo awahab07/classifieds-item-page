@@ -1,5 +1,5 @@
 import { createMuiTheme, Theme } from '@material-ui/core';
-import { grey, indigo } from '@material-ui/core/colors';
+import { blueGrey, grey, indigo } from '@material-ui/core/colors';
 import { makeStyles, responsiveFontSizes } from '@material-ui/core/styles';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { SpacingArgument } from '@material-ui/core/styles/createSpacing';
@@ -12,7 +12,7 @@ export const appTheme = responsiveFontSizes(
         ...indigo,
         main: primaryColor,
       },
-      secondary: grey
+      secondary: blueGrey
     },
     typography: {
       fontFamily,
@@ -33,6 +33,13 @@ export const useAppStyles = makeStyles((theme: Theme) => ({
   },
   success: {
     color: theme.palette.success.dark
+  },
+  tag: {
+    color: grey['800']
+  },
+  alter: {
+    backgroundColor: grey['300'],
+    opacity: 0.3
   }
 }));
 

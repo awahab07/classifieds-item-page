@@ -16,14 +16,15 @@ const SellerInfo: FunctionComponent<{ contact: ISeller }> = (props: { contact: I
       container
       alignItems={'center'}
       borderTop={0.5}
+      borderBottom={0.5}
       classes={{ root: appClasses.fadeBorder }}
       wrap={'nowrap'}
       p={isMobile ? 0 : 2}
     >
       <BoxGrid
-        color={'info.light'}
         p={isMobile ? 2 : 0}
         mx={isMobile ? 0 : 2}
+        color={'secondary.dark'}
         fontSize={getAppSpacing(isMobile ? 4 : 6)}
       >
         <AccountCircle fontSize={'inherit'} />

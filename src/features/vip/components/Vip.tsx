@@ -9,7 +9,10 @@ import { useIsMobile } from '../../../shared/utils/screen';
 import { RootState } from '../../../store';
 import { vipActions } from '../index';
 import { useStyles } from '../styles';
+import ArticleAttributes from './ArticleAttributes';
 import ArticleCta from './ArticleCta';
+import ArticleDescription from './ArticleDescription';
+import ArticleFeatures from './ArticleFeatures';
 import MobileNavBar from './MobileNavBar';
 import SellerInfo from './SellerInfo';
 import Slide from './Slide';
@@ -55,6 +58,9 @@ const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
           />
           {isMobile && vip !== null ? <ArticleCta {...vip} /> : null}
           {vip !== null ? <SellerInfo contact={vip.contact}/> : null}
+          {vip !== null ? <ArticleAttributes attributes={vip.attributes}/> : null}
+          {vip !== null ? <ArticleFeatures features={vip.features}/> : null}
+          {vip !== null ? <ArticleDescription description={vip.htmlDescription}/> : null}
         </Grid>
       </Paper>
     </>
