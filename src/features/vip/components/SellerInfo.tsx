@@ -21,7 +21,7 @@ const SellerInfo: FunctionComponent<{ contact: ISeller }> = (props: { contact: I
       p={isMobile ? 0 : 2}
     >
       <BoxGrid
-        color={'secondary.dark'}
+        color={'info.light'}
         p={isMobile ? 2 : 0}
         mx={isMobile ? 0 : 2}
         fontSize={getAppSpacing(isMobile ? 4 : 6)}

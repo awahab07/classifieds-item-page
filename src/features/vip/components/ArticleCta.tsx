@@ -39,6 +39,7 @@ const ArticleCta: FunctionComponent<{ contact: ISeller; price: IArticlePrice }> 
           aria-label="View location on maps"
           component="a"
           href={getGMapQueryUrl(contact.latLong)}
+          classes={{ root: appClasses.success }}
         >
           <Room />
         </IconButton>
