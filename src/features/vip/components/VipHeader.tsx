@@ -1,8 +1,7 @@
-import { Grid, IconButton, Theme, Typography } from '@material-ui/core';
-import { green } from '@material-ui/core/colors';
-import { makeStyles } from '@material-ui/core/styles';
+import { IconButton, Typography } from '@material-ui/core';
 import { Call, Room } from '@material-ui/icons';
 import React, { FunctionComponent } from 'react';
+import { useAppStyles } from '../../../app/theme';
 import { IArticlePrice } from '../../../models/ArticlePrice';
 import { ISeller, ISellerPhone, SellePhoneType } from '../../../models/Seller';
 import { BoxGrid } from '../../../shared/BoxComponents';
@@ -15,46 +14,20 @@ export interface IVipHeaderProps {
   price: IArticlePrice;
 }
 
-const useStyles = makeStyles((theme: Theme) => ({
-  price: {
-    color: green['900'],
-    fontWeight: 500
-  },
-  secondary: {
-    margin: 0,
-  },
-}));
-
-const Title: FunctionComponent<{ title: string }> = (props: {
-  title: string;
-}) => {
-  return (
-    <BoxGrid item container xs={12}>
-      <Typography variant={'h3'}>{props.title}</Typography>
-    </BoxGrid>
-  );
-};
-
-const Address: FunctionComponent<{ contact: ISeller }> = (props: {
-  contact: ISeller;
-}) => {
-  const classes = useStyles();
+const Address: FunctionComponent<{ contact: ISeller }> = (props: { contact: ISeller }) => {
   const { contact } = props;
 
   return (
     <BoxGrid
-      item
       container
-      direction={'row'}
-      spacing={1}
       fontSize={'h6.fontSize'}
+      color={'secondary.dark'}
       alignItems={'center'}
-      className={classes.secondary}
-      xs={6}
-      color={'primary.main'}
+      px={4}
     >
-      <Typography variant={'h6'}>{contact.address1}</Typography>,
-      <Typography variant={'h6'}>{contact.country}</Typography>
+      <BoxTypography alignItems={'center'} variant={'h6'}>{contact.address1},</BoxTypography>
+      <BoxTypography alignItems={'center'} variant={'h6'}>{contact.address2},</BoxTypography>
+      <BoxTypography alignItems={'center'} variant={'h6'}>{contact.country}</BoxTypography>
       <IconButton
         disabled={isNaN(contact.latLong?.lat)}
         aria-label="View on maps"
@@ -80,45 +53,42 @@ const Address: FunctionComponent<{ contact: ISeller }> = (props: {
   );
 };
 
-const Price: FunctionComponent<{ price: IArticlePrice }> = (props: {
-  price: IArticlePrice;
-}) => {
-  const classes = useStyles();
+const Price: FunctionComponent<{ price: IArticlePrice }> = (props: { price: IArticlePrice }) => {
   const { price } = props;
 
   return (
     <BoxGrid
       item
+      xs={4}
       container
-      flexGrow={1}
-      direction={'row'}
-      justify={'flex-end'}
-      alignItems={'baseline'}
-      wrap={'nowrap'}
+      direction={'column'}
+      alignItems={'flex-end'}
       spacing={2}
-      p={0.8}
-      xs={6}
+      p={4}
+      px={1.5}
     >
-      <Typography variant={'caption'}>
-        ({price.vat}% vat)
-      </Typography>
-      <BoxTypography variant={'h2'} className={classes.price}>{price.net}</BoxTypography>
+      <BoxTypography variant={'h4'} color={'success.dark'}>
+        {price.net}
+      </BoxTypography>
+      <Typography variant={'caption'}>({price.vat}% vat) - Gross: {price.grs.currency} {price.grs.amount}</Typography>
     </BoxGrid>
   );
 };
 
 const VipHeader: FunctionComponent<IVipHeaderProps> = (props: IVipHeaderProps) => {
-  const classes = useStyles();
   const { title, price, contact } = props;
+  const appClasses = useAppStyles();
 
   return (
-    <Grid
-      container={true}
-    >
-      <Title title={title}/>
-      <Address contact={contact}/>
-      <Price key="price" price={price}/>
-    </Grid>
+    <BoxGrid container borderColor={'primary.dark'} borderBottom={1} classes={{root: appClasses.headerBorder}}>
+      <BoxGrid item container direction={'column'} xs={8}>
+        <BoxTypography container variant={'h4'} color={'primary.main'} p={4} pb={0}>
+          {title}
+        </BoxTypography>
+        <Address contact={contact} />
+      </BoxGrid>
+      <Price price={price} />
+    </BoxGrid>
   );
 };
 

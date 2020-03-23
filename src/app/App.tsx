@@ -1,6 +1,7 @@
-import { Box, CssBaseline, ThemeProvider } from '@material-ui/core';
+import { CssBaseline, ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import Vip from '../features/vip/components/Vip';
+import { BoxGrid } from '../shared/BoxComponents';
 import { appTheme, useAppStyles } from './theme';
 
 const App: React.FC = (): React.ReactElement => {
@@ -9,9 +10,11 @@ const App: React.FC = (): React.ReactElement => {
   return (
     <ThemeProvider theme={appTheme}>
       <CssBaseline>
-        <Box className={classes.main}>
-          <Vip />
-        </Box>
+        <BoxGrid container classes={{root: classes.rootWrapper}} justify={'center'}>
+          <BoxGrid className={classes.contentWrapper}>
+            <Vip />
+          </BoxGrid>
+        </BoxGrid>
       </CssBaseline>
     </ThemeProvider>
   );

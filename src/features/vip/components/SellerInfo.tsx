@@ -37,7 +37,7 @@ const SellerInfo: FunctionComponent<{ contact: ISeller }> = (props: { contact: I
           {contact.address1}, {contact.address2} - {contact.country}
         </BoxTypography>
         {!isMobile ? (
-          <BoxTypography variant={'body1'} color={'secondary.main'} my={2}>
+          <BoxTypography variant={'body1'} color={'secondary.dark'} my={2}>
             {contact.imprint}
           </BoxTypography>
         ) : null}

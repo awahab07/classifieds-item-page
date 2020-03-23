@@ -125,7 +125,7 @@ const ImageSlider = (props: PropsWithChildren<IImageSliderProps>): ReactElement 
           </SwipeableViewsWithKeyboard>
           {!isMobile ? (
             <IconButton
-              disabled={slideIndex === data.length}
+              disabled={slideIndex === data.length - 1}
               aria-label="Next Image"
               className={[classes.control, classes.navForward].join(' ')}
               onClick={handleNavForward}

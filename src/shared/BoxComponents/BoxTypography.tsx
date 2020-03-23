@@ -4,10 +4,22 @@ import BoxGrid, { IBoxGridProps } from './BoxGrid';
 
 interface IBoxTypographyProps extends PropsWithChildren<IBoxGridProps & TypographyProps> {}
 
+export const typographyOnlyProps = (props: PropsWithChildren<IBoxGridProps & TypographyProps>) => {
+  const { variant, gutterBottom } = props;
+
+  return { variant, gutterBottom };
+};
+
+export const boxGridOnlyProps = (props: PropsWithChildren<IBoxGridProps & TypographyProps>) => {
+  const { variant, gutterBottom, ...rest } = props;
+
+  return rest;
+};
+
 const BoxTypography: FunctionComponent<IBoxTypographyProps> = (props: IBoxTypographyProps) => {
   return (
-    <BoxGrid {...props}>
-      <Typography variant={props.variant} gutterBottom={props.gutterBottom}>{props.children}</Typography>
+    <BoxGrid {...boxGridOnlyProps(props)}>
+      <Typography {...typographyOnlyProps(props)}>{props.children}</Typography>
     </BoxGrid>
   );
 };

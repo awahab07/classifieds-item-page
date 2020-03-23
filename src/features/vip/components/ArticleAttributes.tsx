@@ -46,7 +46,7 @@ const ArticleAttributes: FunctionComponent<{ attributes: IArticleAttribute[] }> 
       </BoxTypography>
       {attributes.map((attr: IArticleAttribute) => (
         <BoxGrid
-          key={attr.tag}
+          key={attr.tag + attr.value}
           item
           container
           relative
