@@ -1863,6 +1863,7 @@ exports[`App renders correctly should render correctly 1`] = `
                                                   <WithStyles(ForwardRef(Grid))
                                                     alignItems="center"
                                                     container={true}
+                                                    data-test-id="vip.slider-container"
                                                     direction="column"
                                                     justify="center"
                                                   >
@@ -1976,11 +1977,13 @@ exports[`App renders correctly should render correctly 1`] = `
                                                         }
                                                       }
                                                       container={true}
+                                                      data-test-id="vip.slider-container"
                                                       direction="column"
                                                       justify="center"
                                                     >
                                                       <div
                                                         className="MuiGrid-root-158 MuiGrid-container-159 MuiGrid-direction-xs-column-162 MuiGrid-align-items-xs-center-167 MuiGrid-justify-xs-center-176"
+                                                        data-test-id="vip.slider-container"
                                                       >
                                                         <WithStyles(ForwardRef(Grid))
                                                           className="makeStyles-center-147"
@@ -2105,6 +2108,7 @@ exports[`App renders correctly should render correctly 1`] = `
                                                               <WithStyles(ForwardRef(IconButton))
                                                                 aria-label="Toggle Full Screen"
                                                                 className="makeStyles-control-148 makeStyles-fsToggleButton-149 makeStyles-fsToggleButton-155"
+                                                                data-test-id="vip.fs-btn"
                                                                 onClick={[Function]}
                                                               >
                                                                 <ForwardRef(IconButton)
@@ -2123,12 +2127,14 @@ exports[`App renders correctly should render correctly 1`] = `
                                                                       "sizeSmall": "MuiIconButton-sizeSmall-268",
                                                                     }
                                                                   }
+                                                                  data-test-id="vip.fs-btn"
                                                                   onClick={[Function]}
                                                                 >
                                                                   <WithStyles(ForwardRef(ButtonBase))
                                                                     aria-label="Toggle Full Screen"
                                                                     centerRipple={true}
                                                                     className="MuiIconButton-root-261 makeStyles-control-148 makeStyles-fsToggleButton-149 makeStyles-fsToggleButton-155"
+                                                                    data-test-id="vip.fs-btn"
                                                                     disabled={false}
                                                                     focusRipple={true}
                                                                     onClick={[Function]}
@@ -2144,6 +2150,7 @@ exports[`App renders correctly should render correctly 1`] = `
                                                                           "root": "MuiButtonBase-root-270",
                                                                         }
                                                                       }
+                                                                      data-test-id="vip.fs-btn"
                                                                       disabled={false}
                                                                       focusRipple={true}
                                                                       onClick={[Function]}
@@ -2151,6 +2158,7 @@ exports[`App renders correctly should render correctly 1`] = `
                                                                       <button
                                                                         aria-label="Toggle Full Screen"
                                                                         className="MuiButtonBase-root-270 MuiIconButton-root-261 makeStyles-control-148 makeStyles-fsToggleButton-149 makeStyles-fsToggleButton-155"
+                                                                        data-test-id="vip.fs-btn"
                                                                         disabled={false}
                                                                         onBlur={[Function]}
                                                                         onClick={[Function]}

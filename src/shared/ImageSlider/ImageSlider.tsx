@@ -87,9 +87,10 @@ const ImageSlider = (props: PropsWithChildren<IImageSliderProps>): ReactElement 
 
   return (
     <ThemeProvider theme={isOnFullScreen ? sliderDarkTheme : appTheme}>
-      <Grid container direction={'column'} alignItems={'center'} justify={'center'} ref={sliderRef}>
+      <Grid data-test-id={'vip.slider-container'} container direction={'column'} alignItems={'center'} justify={'center'} ref={sliderRef}>
         <Grid item container className={classes.center}>
           <IconButton
+            data-test-id={'vip.fs-btn'}
             aria-label="Toggle Full Screen"
             className={[classes.control, classes.fsToggleButton].join(' ')}
             onClick={handleToggleFullScreen}

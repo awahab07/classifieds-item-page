@@ -5681,6 +5681,7 @@ exports[`Vip renders correctly should render correctly 1`] = `
                       <WithStyles(ForwardRef(Grid))
                         alignItems="center"
                         container={true}
+                        data-test-id="vip.slider-container"
                         direction="column"
                         justify="center"
                       >
@@ -5794,11 +5795,13 @@ exports[`Vip renders correctly should render correctly 1`] = `
                             }
                           }
                           container={true}
+                          data-test-id="vip.slider-container"
                           direction="column"
                           justify="center"
                         >
                           <div
                             className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-justify-xs-center"
+                            data-test-id="vip.slider-container"
                           >
                             <WithStyles(ForwardRef(Grid))
                               className="makeStyles-center-205"
@@ -5923,6 +5926,7 @@ exports[`Vip renders correctly should render correctly 1`] = `
                                   <WithStyles(ForwardRef(IconButton))
                                     aria-label="Toggle Full Screen"
                                     className="makeStyles-control-206 makeStyles-fsToggleButton-207 makeStyles-fsToggleButton-213"
+                                    data-test-id="vip.fs-btn"
                                     onClick={[Function]}
                                   >
                                     <ForwardRef(IconButton)
@@ -5941,12 +5945,14 @@ exports[`Vip renders correctly should render correctly 1`] = `
                                           "sizeSmall": "MuiIconButton-sizeSmall",
                                         }
                                       }
+                                      data-test-id="vip.fs-btn"
                                       onClick={[Function]}
                                     >
                                       <WithStyles(ForwardRef(ButtonBase))
                                         aria-label="Toggle Full Screen"
                                         centerRipple={true}
                                         className="MuiIconButton-root makeStyles-control-206 makeStyles-fsToggleButton-207 makeStyles-fsToggleButton-213"
+                                        data-test-id="vip.fs-btn"
                                         disabled={false}
                                         focusRipple={true}
                                         onClick={[Function]}
@@ -5962,6 +5968,7 @@ exports[`Vip renders correctly should render correctly 1`] = `
                                               "root": "MuiButtonBase-root",
                                             }
                                           }
+                                          data-test-id="vip.fs-btn"
                                           disabled={false}
                                           focusRipple={true}
                                           onClick={[Function]}
@@ -5969,6 +5976,7 @@ exports[`Vip renders correctly should render correctly 1`] = `
                                           <button
                                             aria-label="Toggle Full Screen"
                                             className="MuiButtonBase-root MuiIconButton-root makeStyles-control-206 makeStyles-fsToggleButton-207 makeStyles-fsToggleButton-213"
+                                            data-test-id="vip.fs-btn"
                                             disabled={false}
                                             onBlur={[Function]}
                                             onClick={[Function]}
@@ -6260,6 +6268,7 @@ exports[`Vip renders correctly should render correctly 1`] = `
                                                 <img
                                                   alt="Ferrari 246 dino GT 1973"
                                                   className="makeStyles-slider-202 makeStyles-slider-211 "
+                                                  data-test-id="vip.slide-image"
                                                   onClick={[Function]}
                                                   src="//i.ebayimg.com/00/s/NjgyWDEwMjQ=/z/znIAAOxynwlTcg-F/$_27.jpg"
                                                 />
