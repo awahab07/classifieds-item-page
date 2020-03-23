@@ -1,5 +1,6 @@
 import { Grid, Paper } from '@material-ui/core';
 import React, { FunctionComponent, PropsWithChildren, ReactElement, useEffect } from 'react';
+import Helmet from 'react-helmet';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { IArticleImage } from '../../../models/ArticleImage';
@@ -47,9 +48,18 @@ const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
 
   return (
     <>
+      <Helmet>
+        <title>{`Mobile.de | Cars`}</title>
+      </Helmet>
+
       <Switch>
         <Route path={`${match.path}/:vipTitle`}>
+          <Helmet>
+            <title>{`Mobile.de | Cars | ${vip?.title}`}</title>
+          </Helmet>
+
           {isMobile && vip !== null ? <MobileNavBar title={vip.title} price={vip.price} /> : null}
+
           <AppBreadcrumbs parentUrl={match.url} currentUrlSegment={seoTitle} />
           <Paper elevation={0}>
             <Grid
@@ -66,20 +76,22 @@ const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
                 thumbnailRenderer={Thumbnail}
                 isMobile={isMobile}
               />
+
               {isMobile && vip !== null ? <ArticleCta {...vip} /> : null}
+
               {vip !== null ? <SellerInfo contact={vip.contact} /> : null}
+
               {vip !== null ? <ArticleAttributes attributes={vip.attributes} /> : null}
+
               {vip !== null ? <ArticleFeatures features={vip.features} /> : null}
+
               {vip !== null ? <ArticleDescription description={vip.htmlDescription} /> : null}
             </Grid>
           </Paper>
         </Route>
+
         {vip !== null ? (
-          <Redirect
-            exact={true}
-            from={`${match.path}`}
-            to={`${match.path}/${seoTitle}`}
-          />
+          <Redirect exact={true} from={`${match.path}`} to={`${match.path}/${seoTitle}`} />
         ) : null}
       </Switch>
     </>
