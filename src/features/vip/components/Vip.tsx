@@ -1,6 +1,5 @@
 import { Grid, Paper } from '@material-ui/core';
 import React, { FunctionComponent, PropsWithChildren, ReactElement, useEffect } from 'react';
-import Helmet from 'react-helmet';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { IArticleImage } from '../../../models/ArticleImage';
@@ -19,9 +18,12 @@ import ArticleDescription from './ArticleDescription';
 import ArticleFeatures from './ArticleFeatures';
 import MobileNavBar from './MobileNavBar';
 import SellerInfo from './SellerInfo';
+import Seo from './Seo';
 import Slide from './Slide';
 import Thumbnail from './Thumbnail';
 import VipHeader from './VipHeader';
+
+declare const location: Location;
 
 const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
   const dispatch = useDispatch();
@@ -48,16 +50,10 @@ const Vip: FunctionComponent = (props: PropsWithChildren<{}>): ReactElement => {
 
   return (
     <>
-      <Helmet>
-        <title>{`Mobile.de | Cars`}</title>
-      </Helmet>
+      <Seo vip={vip} images={sliderImages} url={location?.href ?? ''}/>
 
       <Switch>
         <Route path={`${match.path}/:vipTitle`}>
-          <Helmet>
-            <title>{`Mobile.de | Cars | ${vip?.title}`}</title>
-          </Helmet>
-
           {isMobile && vip !== null ? <MobileNavBar title={vip.title} price={vip.price} /> : null}
 
           <AppBreadcrumbs parentUrl={match.url} currentUrlSegment={seoTitle} />
