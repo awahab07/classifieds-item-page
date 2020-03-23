@@ -14,28 +14,32 @@ const AppBreadcrumbs: FunctionComponent<PropsWithChildren<IBreadCrumbsProps>> = 
 
   return (
     <Breadcrumbs aria-label="breadcrumb" separator={'>'}>
-      {urlSegments.map((segment: string, index: number) => (
+      {urlSegments.map((segment: string, index: number) =>
+        segment !== undefined ? (
+          <Link
+            key={segment}
+            color="inherit"
+            href={`${urlSegments.slice(0, index + 1).join('/')}`}
+            component={'a'}
+          >
+            <BoxTypography variant={'caption'} color={'secondary.main'}>
+              {segment}
+            </BoxTypography>
+          </Link>
+        ) : null
+      )}
+
+      {props.currentUrlSegment !== undefined ? (
         <Link
-          key={segment}
           color="inherit"
-          href={`${urlSegments.slice(0, index + 1).join('/')}`}
+          href={`${urlSegments.join('/')}/${props.currentUrlSegment}`}
           component={'a'}
         >
-          <BoxTypography variant={'caption'} color={'secondary.main'}>
-            {segment}
+          <BoxTypography variant={'caption'} color={'secondary.dark'}>
+            {props.currentUrlSegment}
           </BoxTypography>
         </Link>
-      ))}
-
-      <Link
-        color="inherit"
-        href={`${urlSegments.join('/')}/${props.currentUrlSegment}`}
-        component={'a'}
-      >
-        <BoxTypography variant={'caption'} color={'secondary.dark'}>
-          {props.currentUrlSegment}
-        </BoxTypography>
-      </Link>
+      ) : null}
     </Breadcrumbs>
   );
 };
