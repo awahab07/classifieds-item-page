@@ -137,7 +137,8 @@
       "config/**/*.js",
       "node_modules/**/*.ts",
       "coverage/lcov-report/*.js",
-      "public/**/*.*"
+      "public/**/*.*",
+      "src/**/*.snap"
     ]
   }
 }

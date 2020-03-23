@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IVip } from '../../models/Vip';
+import { IVip } from '../../../models/Vip';
 
 export const vipSliceName = 'vip';
 
@@ -9,7 +9,7 @@ interface IVipState {
   error?: string | null;
 }
 
-const initialState: IVipState = {
+export const initialState: IVipState = {
   vip: null,
   loading: false,
   error: null,

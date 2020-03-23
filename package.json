@@ -43,6 +43,8 @@
     ]
   },
   "devDependencies": {
+    "@types/enzyme": "^3.10.5",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/fscreen": "^1.0.1",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
@@ -51,10 +53,20 @@
     "@types/react-redux": "^7.1.7",
     "@types/react-swipeable-views": "^0.13.0",
     "@types/react-swipeable-views-utils": "^0.13.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "jest-enzyme": "^7.1.2",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^16.13.1",
     "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^4.2.0",
     "typescript-tslint-plugin": "^0.5.5"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
