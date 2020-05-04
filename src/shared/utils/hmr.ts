@@ -1,0 +1,13 @@
+export type HmrAcceptor = (module: string, callback: () => void) => void;
+
+export const runForHmr = (fns: ((accept: HmrAcceptor) => void)[]): void => {
+  if (
+    module && process?.env?.NODE_ENV === 'development' && (module as any).hot
+  ) {
+    console.log('accepting hot');
+    const accept: HmrAcceptor = (module as any).hot.accept;
+    for (const f of fns) {
+      f.call(module, accept);
+    }
+  }
+};
