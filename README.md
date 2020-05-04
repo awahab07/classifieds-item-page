@@ -1,8 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Implementation of VIP (View Item Page) task for mobile.de coding challenge.
+This example project was created to test the new Redux Toolkit and its support for TypeScript. Also, Material UI's hooks are used to demonstrate the eas they offer when customizing and consuming a material UI theme. 
 
-The app is build with Mobile-First approach and adapts well on a wider screen for tablet and desktop.
+The project is an implementation of an example VIP (View Item Page). VIP is a page to list full details and description of an item sold on online stores like Amazon and eBay.
+
+The app is built with Mobile-First approach and adapts well on a wider screen for tablet and desktop.
 
 The app is built using React 16 with Material UI as the primary UI framework. 
 React 16's hooks are utilized for declarative and independent components with clean code and no wrapper hell effect on DOM.
@@ -13,6 +15,11 @@ All the custom styles are applied in a way that they are derived directly from t
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn install`
+
+Installs all project npm dependencies.<br />
+Make sure you have **NodeJS** (version >9.x.x), **npm** and **yarn** installed on your machine.
 
 ### `yarn start`
 
