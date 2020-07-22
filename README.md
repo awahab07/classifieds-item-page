@@ -1,8 +1,14 @@
+# Classified's Item Page
+
+An implementation of an example VIP (View Item Page). VIP is a page to list full details and description of an item sold on online stores like Amazon and eBay.
+
+Documentation of the important design decisions made while development, built components and screenshots and approach used towards UX and SEO can be found [here](https://docs.google.com/document/d/1G0cwsuYjv0JedCSE2EEFOqEWiC_tMt0mnadc80n5mmo/edit?usp=sharing). 
+
+![Mobile Preview](https://bit.ly/2BkPFvc)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 This example project was created to test the new Redux Toolkit and its support for TypeScript. Also, Material UI's hooks are used to demonstrate the eas they offer when customizing and consuming a material UI theme. 
-
-The project is an implementation of an example VIP (View Item Page). VIP is a page to list full details and description of an item sold on online stores like Amazon and eBay.
 
 The app is built with Mobile-First approach and adapts well on a wider screen for tablet and desktop.
 
